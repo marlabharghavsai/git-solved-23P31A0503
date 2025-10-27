@@ -1,20 +1,25 @@
 # System Architecture
 
 ## Overview
-DevOps Simulator follows a microservices architecture designed for high availability and scalability.  
-This document covers both **production** and **development** configurations.
+DevOps Simulator follows a microservices architecture designed for high availability, scalability, and extensibility.  
+This document covers **production**, **development**, and **experimental** configurations.
 
 ---
 
 ## Components
 
 ### 1. Application Server
-- **Technology**: Node.js + Express
+- **Technology**: Node.js + Express  
 - **Production Port**: 8080  
 - **Development Port**: 3000  
 - **Scaling**: Horizontal auto-scaling (production only)  
-- **Development Features**: Hot reload, Chrome DevTools debugger on port 9229  
-- **Notes**: Runs in Docker Compose during development for faster iteration.
+- **Development Features**: Hot reload, Chrome DevTools debugger (port 9229)  
+- **Notes**: Runs in Docker Compose during development for faster iteration.  
+
+**Experimental Extension**:
+- AI-enhanced version using **TensorFlow.js**  
+- Predictive auto-scaling  
+- Event-driven with **Apache Kafka** integration  
 
 ---
 
@@ -28,11 +33,16 @@ This document covers both **production** and **development** configurations.
   - Single local instance  
   - Auto-seeds test data on startup  
   - Manual backups only  
-- **Backup Retention**: 30 days (production)  
+
+**Experimental Extension**:
+- Multi-node PostgreSQL cluster (5 nodes)  
+- Redis cache with ML-based optimization  
+- AI-assisted query optimization and indexing  
+- Continuous backup with geo-redundancy  
 
 ---
 
-### 3. Monitoring System
+### 3. Monitoring & Observability
 - **Production**:
   - Prometheus + Grafana dashboards  
   - Email alerts for critical issues  
@@ -40,9 +50,13 @@ This document covers both **production** and **development** configurations.
 - **Development**:
   - Console logging with verbose output  
   - Optional Prometheus integration  
-  - Additional metric: Build time  
   - Dashboard: In-development web interface  
-- **Experimental**: AI-powered log analysis and anomaly detection
+
+**Experimental Extension**:
+- AI-powered log analysis  
+- Anomaly detection and predictive alerting  
+- Long-term storage via **Thanos**  
+- ELK Stack integration  
 
 ---
 
@@ -51,6 +65,11 @@ This document covers both **production** and **development** configurations.
 - **Development**: Docker Compose (local orchestration)  
 - **Services**: Application, Database, Redis cache  
 - **Features**: Hot reload via volume mounts  
+
+**Experimental Extension**:
+- Multi-cloud orchestration (AWS, Azure, GCP, DigitalOcean)  
+- Global load balancing with GeoDNS  
+- Cross-cloud failover using anycast  
 
 ---
 
@@ -78,6 +97,11 @@ This document covers both **production** and **development** configurations.
 - **Testing**: Automated unit tests before deployment
 - **Rollback**: Git checkout to previous commit
 
+**Experimental Extension**:
+- Continuous retraining of AI models  
+- Chaos engineering simulations  
+- Reinforcement learning–based scaling optimizer  
+
 ---
 
 ## Development Workflow
@@ -103,14 +127,21 @@ This document covers both **production** and **development** configurations.
 - CORS enabled for all origins  
 - Debug endpoints and source maps enabled  
 
+**Experimental Extension**:
+- Zero-trust architecture  
+- AES-256 encryption  
+- Comprehensive audit logging  
+
 ---
 
 ## Experimental Features
 ⚠️ **Warning**: The following are experimental and not for production use:
 - Multi-cloud deployment support  
-- AI-powered log analysis  
-- Automatic rollback on anomaly detection  
+- AI-powered log analysis and anomaly detection  
+- Predictive auto-scaling  
+- Real-time ML inference  
+- Chaos engineering and anomaly rollback  
 
 ---
 
-_Last updated: Combined version (Production + Development)_
+_Last updated: Combined version (Production + Development + Experimental)_
